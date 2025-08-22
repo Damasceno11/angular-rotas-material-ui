@@ -1,0 +1,84 @@
+<div class="contact-container">
+  <div class="contact-header">
+    <h1 class="contact-title">Entre em Contato</h1>
+    <p class="contact-subtitle">Estamos aqui para ajudar você</p>
+  </div>
+
+  <mat-card class="contact-card">
+    <mat-card-content>
+      <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="contact-form">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nome Completo</mat-label>
+          <input matInput formControlName="name" placeholder="Seu nome" />
+          <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+            Nome é obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="seu@email.com" />
+          <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+            Email é obrigatório
+          </mat-error>
+          <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+            Email inválido
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Assunto</mat-label>
+          <mat-select formControlName="subject">
+            <mat-option value="suporte">Suporte Técnico</mat-option>
+            <mat-option value="vendas">Informações de Vendas</mat-option>
+            <mat-option value="parceria">Proposta de Parceria</mat-option>
+            <mat-option value="outro">Outro</mat-option>
+          </mat-select>
+          <mat-error *ngIf="contactForm.get('subject')?.hasError('required')">
+            Assunto é obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Mensagem</mat-label>
+          <textarea
+            matInput
+            formControlName="message"
+            placeholder="Sua mensagem..."
+            rows="5"
+          ></textarea>
+          <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+            Mensagem é obrigatória
+          </mat-error>
+          <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">
+            Mínimo 10 caracteres
+          </mat-error>
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="submit-button"
+          [disabled]="!contactForm.valid"
+        >
+          <mat-icon>send</mat-icon>
+          Enviar Mensagem
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="contact-info">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Informações de Contato</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>📧 pedropaulodamasceno@gmail.com</p>
+        <p>📞 (21) 99665-0484</p>
+        <p>📍 Blumenau, SC</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="about-container">
+  <div class="about-header">
+    <h1 class="about-title">Sobre Nós</h1>
+    <p class="about-subtitle">Conheça nossa equipe e missão</p>
+  </div>
+</div>
+
+<mat-card class="about-card">
+  <mat-card-header>
+    <mat-card-title>Nossa Missão</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Oferecer soluções digitais inovadoras com foco na experiência do usuário e qualidade técnica.
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-divider class="divider"></mat-divider>
+
+<h2 class="section-title">Nossa Equipe</h2>
+<div class="team-grid">
+  <mat-card *ngFor="let member of team" class="team-card">
+    <mat-card-header>
+      <div class="avatar">{{ member.avatar }}</div>
+      <mat-card-title>{{ member.nome }}</mat-card-title>
+      <mat-card-subtitle>{{ member.funcao }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>
+
+<mat-divider class="divider"></mat-divider>
+
+<h2 class="section-title">O que Oferecemos</h2>
+<mat-card class="features-card">
+  <mat-card-content>
+    <ul class="features-list">
+      <li *ngFor="let feature of features">✅ {{ feature }}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,23 @@
+<div class="home-container">
+  <div class="hero-section">
+    <h1 class="hero-title">Bem-vindo ao Nosso Site</h1>
+    <p class="hero-subtitle">
+      Descubra uma experiência incrível com design moderno e funcionalidades avançadas
+    </p>
+    <button mat-raised-button color="accent" class="cta-button" (click)="scrollToFeatures()">
+      <mat-icon>arrow_downward</mat-icon>Começar Agora
+    </button>
+  </div>
+
+  <div id="featuresSection" class="features-grid">
+    <mat-card *ngFor="let feature of features" class="feature-card">
+      <mat-card-header>
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <mat-card-title>{{ feature.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ feature.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

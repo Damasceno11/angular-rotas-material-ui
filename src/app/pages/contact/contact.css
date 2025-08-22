@@ -1,0 +1,56 @@
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  color: #3f51b5;
+  margin-bottom: 16px;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.contact-card {
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.submit-button {
+  align-self: flex-end;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+.contact-info mat-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #333;
+}
